@@ -25,3 +25,17 @@
     args: [ --whitespaces-count, '4' ]
     files: ''
     exclude: (Makefile|debian/rules)(\.in)?$
+
+# Forked from the basic yelp precommit hook
+-   id: end-of-file-fixer
+    name: Fix End of Files
+    description: Ensures that a file is either empty, or ends with one newline. 
+    entry: end-of-file-fixer
+    language: python
+    files: \.(c|cpp|html|erb|slim|haml|ejs|jade|js|coffee|json|rb|md|py|css|scss|less|sh|tmpl|txt|yaml|yml|pp|cs|cc)$
+-   id: trailing-whitespace
+    name: Trim Trailing Whitespace
+    description: This hook trims trailing whitespace. 
+    entry: trailing-whitespace-fixer
+    language: python
+    files: \.(c|cpp|html|erb|slim|haml|ejs|jade|js|coffee|json|rb|md|py|css|scss|less|sh|tmpl|txt|yaml|yml|pp|cs)$

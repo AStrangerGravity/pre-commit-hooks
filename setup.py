@@ -24,6 +24,9 @@ setup(
     ],
 
     packages=find_packages('.'),
+    install_requires=[
+      'python-magic'
+    ],
     entry_points={
         'console_scripts': [
             'forbid_crlf = pre_commit_hooks.forbid_crlf:main',

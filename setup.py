@@ -4,11 +4,11 @@ from setuptools import setup
 setup(
     name='pre-commit-hooks',
     description='Some out-of-the-box hooks for pre-commit',
-    url='https://github.com/Lucas-C/pre-commit-hooks',
+    url='https://github.com/AStrangerGravity/pre-commit-hooks',
     version='0.0.1',
 
-    author='Lucas Cimon',
-    author_email='lucas.cimon@gmail.com',
+    author='John Austin',
+    author_email='john@astrangergravity.com',
 
     platforms='linux',
     classifiers=[
@@ -24,17 +24,12 @@ setup(
     ],
 
     packages=find_packages('.'),
-    install_requires=[
-        'lxml'
-    ],
     entry_points={
         'console_scripts': [
             'forbid_crlf = pre_commit_hooks.forbid_crlf:main',
             'remove_crlf = pre_commit_hooks.remove_crlf:main',
             'forbid_tabs = pre_commit_hooks.forbid_tabs:main',
             'remove_tabs = pre_commit_hooks.remove_tabs:main',
-            'forbid_html_img_without_alt_text = pre_commit_hooks.forbid_html_img_without_alt_text:main',
-            'forbid_non_std_html_attributes = pre_commit_hooks.forbid_non_std_html_attributes:main',
         ],
     },
 )

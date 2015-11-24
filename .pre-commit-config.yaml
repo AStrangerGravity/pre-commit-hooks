@@ -1,18 +1,15 @@
-# A list of common hooks I use
--   repo: git://github.com/Lucas-C/pre-commit-hooks
-    sha: c6401ec
+-   repo: git://github.com/AStrangerGravity/pre-commit-hooks
+    sha: 588b9f4b732aeca595b1e7220e9bf1c46fa13b14
     hooks:
     -   id: forbid-crlf
     -   id: remove-crlf
     -   id: forbid-tabs
     -   id: remove-tabs
-    -   id: forbid-html-img-without-alt-text
-    -   id: forbid-non-std-html-attributes
 -   repo: git://github.com/pre-commit/pre-commit-hooks
-    sha: 5dd2605fbe26937c721a8ecc0e53949d3eea4f12
+    sha: 0ff8620e03bf7acfb4dfdc86de14baf032c604f5
     hooks:
     -   id: trailing-whitespace
-        files: ''  # Default value: https://github.com/pre-commit/pre-commit-hooks/blob/master/hooks.yaml#L124
+        files: ''
         args:
         - --no-markdown-linebreak-ext
     -   id: check-json
@@ -24,55 +21,3 @@
         args:
         - --rcfile=.pylintrc
         - --reports=no
--   repo: local
-    hooks:
-    -   id: angular-forbid-apply
-        name: In AngularJS, use $digest over $apply
-        language: pcre
-        entry: \$apply
-        files: \.js$
-    -   id: angular-forbid-ngrepeat-without-trackby
-        name: In AngularJS, ALWAYS use 'track by' with ng-repeat
-        language: pcre
-        entry: ng-repeat(?!.*track by)
-        files: \.html$
-    -   id: angular-forbid-ngmodel-with-no-dot
-        name: "In AngularJS, \"Whenever you have ng-model there's gotta be a\
-            \ dot in there somewhere\""
-        language: pcre
-        entry: ng-model="?[^.]+[" ]
-        files: \.html$
--   repo: local
-    hooks:
-    -   id: css-forbid-px
-        name: In CSS files, use rem or % over px
-        language: pcre
-        entry: px
-        files: \.css$
--   repo: local
-    hooks:
-    -   id: check-bash-syntax
-        name: Check Shell scripts syntax corectness
-        language: system
-        entry: bash -n
-        files: \.sh$
-    -   id: forbid-unicode-non-breaking-spaces
-        name: Detect unicode non-breaking space character U+00A0 aka M-BM-
-        language: system
-        entry: perl -ne 'print if $m = /\xc2\xa0/; $t ||= $m; END{{exit $t}}'
-        files: ''
-    -   id: remove-unicode-non-breaking-spaces
-        name: Remove unicode non-breaking space character U+00A0 aka M-BM-
-        language: system
-        entry: perl -pi* -e 's/\xc2\xa0/ /g && ($t = 1) && print STDERR $_; END{{exit $t}}'
-        files: ''
-    -   id: forbid-en-dashes
-        name: Detect the EXTREMELY confusing unicode character U+2013
-        language: system
-        entry: perl -ne 'print if $m = /\xe2\x80\x93/; $t ||= $m; END{{exit $t}}'
-        files: ''
-    -   id: remove-en-dashes
-        name: Remove the EXTREMELY confusing unicode character U+2013
-        language: system
-        entry: perl -pi* -e 's/\xe2\x80\x93/-/g && ($t = 1) && print STDERR $_; END{{exit $t}}'
-        files: ''

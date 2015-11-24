@@ -17,7 +17,7 @@ def is_textfile(filename, blocksize=512):
     if "text/" in mime:
       return True
 
-    return false
+    return False
 
 class CalledProcessError(RuntimeError):
     pass

@@ -73,6 +73,8 @@ def fix_trailing_whitespace(argv=None):
     else:
         return 0
 
+def main(argv=None):
+    sys.exit(fix_trailing_whitespace())
 
 if __name__ == '__main__':
     sys.exit(fix_trailing_whitespace())

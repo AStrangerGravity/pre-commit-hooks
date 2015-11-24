@@ -63,6 +63,8 @@ def end_of_file_fixer(argv=None):
 
     return retv
 
+def main(argv=None):
+    sys.exit(end_of_file_fixer())
 
 if __name__ == '__main__':
     sys.exit(end_of_file_fixer())

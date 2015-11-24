@@ -5,7 +5,7 @@ import fileinput
 import os
 import sys
 
-from pre_commit_hooks.util import cmd_output
+from utils import cmd_output
 
 
 def _fix_file(filename, markdown=False):

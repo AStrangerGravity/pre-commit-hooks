@@ -1,5 +1,5 @@
 -   repo: git://github.com/AStrangerGravity/pre-commit-hooks
-    sha: 588b9f4b732aeca595b1e7220e9bf1c46fa13b14
+    sha: c0dfb6371bde7ad611a670f4a2a63bca2c7ca64f
     hooks:
     -   id: forbid-crlf
     -   id: remove-crlf
